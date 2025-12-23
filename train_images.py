@@ -426,8 +426,8 @@ def main():
         test_loss = evaluate(model, test_loader)
         print(f"Epoch {epoch}: Train Loss = {train_loss:.4f}, Test Loss = {test_loss:.4f}")
     
-    # Save model
-    torch.save(model.state_dict(), "outputs/bdh_gpu_mnist.pt")
+    # Save model (use _orig_mod to get state dict without torch.compile prefix)
+    torch.save(model._orig_mod.state_dict(), "outputs/bdh_gpu_mnist.pt")
     print("  Model saved to outputs/bdh_gpu_mnist.pt")
     
     # Generate samples

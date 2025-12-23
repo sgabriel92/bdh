@@ -59,3 +59,9 @@ wandb/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Data and outputs
+data/
+outputs/
+input.txt
+*.tar.gz
